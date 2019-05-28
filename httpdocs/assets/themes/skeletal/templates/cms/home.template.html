@@ -1,0 +1,233 @@
+		</div>
+	</div>
+</div>
+<div class="wrapper-hero">
+		[%advert type:'text' limit:'3' ad_group:'hero-carousel'%]
+			[%param *header%]
+				<section id="homepageCarousel" class="carousel slide px-md-0" data-ride="carousel" aria-label="Banner images">
+					[%if [@total_showing@] > 1%]
+						<ol class="carousel-indicators">
+							[%site_value id:'counter' type:'load'/%]
+						</ol>
+					[%/if%]
+					<div class="carousel-inner">
+			[%/param%]
+
+			[%param *body%]
+			<div id="[@count@]" class="carousel-item [%if [@count@] eq '0'%]active[%/if%]">
+				<a href="[@url@]">
+					<img src="[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" class="d-block w-100" alt="[@headline@]" />
+					[%if [@headline@] or [@description@] or [@linktext@]%]
+				<div class="carousel-caption">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-6 offset-md-6 text-center text-sm-left">
+										[%if [@headline@]%]<h2>[@headline@]</h2>[%/if%]
+										[%if [@description@]%]<p>[@description@]</p>[%/if%]
+										[%if [@linktext@]%]<a href="[@url@]" class="btn btn-primary btn-lg btn-rounded text-uppercase">[@linktext@]</a>[%/if%]
+									</div>
+								</div>
+							</div>
+						</div>
+					[%/if%]
+				</a>
+			</div>
+			[%SITE_VALUE id:'counter'%]
+			<li data-target="#homepageCarousel" data-slide-to="[@count@]" [%if [@count@] eq '0'%]class="active"[%/if%]></li>
+			[%/SITE_VALUE%]
+			[%/param%]
+			
+			[%param *footer%]
+					</div>
+					[%if [@total_showing@] > 1%]
+						<a class="carousel-control-prev" href="#homepageCarousel" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#homepageCarousel" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					[%/if%]
+				</section>
+			[%/param%]
+			[%param *ifempty%]
+				<a class="neto-placeholder neto-placeholder-rotator btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" href="[@config:home_url@]/_cpanel?item=adw&page=view&id=New&plan_id=1">
+					Click to add a banner<br/>
+				</a>
+			[%/param%]
+		[%/advert%]
+</div>
+<div class="bg-white pulse-laser">
+[%advert type:'text' template:'' limit:'1' ad_group:'parallax-top' category:'0' %]
+    [%param *header%]
+    [%/param%]
+    [%param *body%]
+		[%if [@headline@] or [@description@] or [@linktext@]%]
+		<div class="parallax" style="background-image:url('[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]')">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-5 mob-content text-dark">
+						[%if [@headline@]%]<h2>[@headline@]</h2>[%/if%]
+						[%if [@description@]%][%format type:'text' rmhtml:'1'%][@description@][%/format%]<br>[%/if%]
+						[%if [@linktext@]%]<a href="[@url@]" class="btn btn-primary btn-md my-3 btn-rounded text-uppercase">[@linktext@]</a>[%/if%]
+					</div>
+					
+				</div>
+			</div>
+			<div class="mob-overlay d-block d-md-none"></div>
+        </div>
+		[%/if%]
+    [%/param%]
+    [%param *footer%]
+    [%/param%]
+    [%param *ifempty%]
+        <a class="neto-placeholder neto-placeholder-rotator btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" href="[@config:home_url@]/_cpanel?item=adw&page=view&id=New&plan_id=1">
+            Click to add a banner<br/>
+        </a>
+    [%/param%]
+[%/advert%]
+	
+</div>
+<div class="bg-white">
+[%advert type:'text' template:'' limit:'1' ad_group:'parallax-mid' category:'0' %]
+    [%param *header%]
+    [%/param%]
+    [%param *body%]
+		[%if [@headline@] or [@description@] or [@linktext@]%]
+		<div class="parallax" style="background-image:url('[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]')">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-5 offset-lg-7 mob-content">
+						[%if [@headline@]%]<h2>[@headline@]</h2>[%/if%]
+						[%if [@description@]%][%format type:'text' rmhtml:'1'%][@description@][%/format%]<br>[%/if%]
+						[%if [@linktext@]%]<a href="[@url@]" class="btn btn-primary btn-md my-3 btn-rounded text-uppercase">[@linktext@]</a>[%/if%]
+					</div>
+				</div>
+			</div>
+			<div class="mob-overlay d-block d-md-none"></div>
+        </div>
+		[%/if%]
+    [%/param%]
+    [%param *footer%]
+    [%/param%]
+    [%param *ifempty%]
+        <a class="neto-placeholder neto-placeholder-rotator btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" href="[@config:home_url@]/_cpanel?item=adw&page=view&id=New&plan_id=1">
+            Click to add a banner<br/>
+        </a>
+    [%/param%]
+[%/advert%]	
+</div>
+<div class="bg-white level-laser">
+[%advert type:'text' template:'' limit:'1' ad_group:'parallax-bottom' category:'0' %]
+    [%param *header%]
+    [%/param%]
+    [%param *body%]
+		[%if [@headline@] or [@description@] or [@linktext@]%]
+		<div class="parallax" style="background-image:url('[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]')">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-5 mob-content">
+						[%if [@headline@]%]<h2>[@headline@]</h2>[%/if%]
+						[%if [@description@]%][%format type:'text' rmhtml:'1'%][@description@][%/format%]<br>[%/if%]
+						[%if [@linktext@]%]<a href="[@url@]" class="btn btn-primary btn-md my-3 btn-rounded text-uppercase">[@linktext@]</a>[%/if%]
+					</div>
+					
+				</div>
+			</div>
+			<div class="mob-overlay d-block d-md-none"></div>
+        </div>
+		[%/if%]
+    [%/param%]
+    [%param *footer%]
+    [%/param%]
+    [%param *ifempty%]
+        <a class="neto-placeholder neto-placeholder-rotator btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" href="[@config:home_url@]/_cpanel?item=adw&page=view&id=New&plan_id=1">
+            Click to add a banner<br/>
+        </a>
+    [%/param%]
+[%/advert%]
+</div>
+<div class="bg-lightblue">
+	<div class="container">
+		<div class="row py-5">
+			<div class="col-12">
+				[%advert type:'product' limit:'8' template:'' ad_group:'home_featured_products'%]
+					[%param *header%]
+							   <h3 class="h2 the_title font-weight-bold py-4">Featured Products</h3>
+							   <div class="row products-row row-eq-height">
+								  <div class="col-12 slick-carousel slickCarousel the_carousel mb-4 px-0">
+					[%/param%]
+					[%param *footer%]
+								 </div>
+							  </div>
+					[%/param%]
+					[%param *ifempty%]
+						[%list type:'product' template:'' sort:'new_arrivals' limit:'12'%]
+						  [%param *header%]
+							   <h3 class="h2 the_title font-weight-bold py-4">Featured Products</h3>
+							   <div class="row products-row row-eq-height">
+								  <div class="col-12 slick-carousel slickCarousel the_carousel mb-4 px-0">
+						  [%/param%]
+						  [%param *footer%]
+								 </div>
+							  </div>
+						  [%/param%]
+						[%/list%]
+					[%/param%]
+				[%/advert%]
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-white">
+	<div class="container py-5">
+		<div class="row justify-content-center wordofmouth">
+			<div class="col-12 col-md-7 text-center my-auto">
+				<a href="https://www.wordofmouth.com.au/certificate/1147237-pulse-laser-relief-sydney" rel="nofollow" class="womo-widget-anchor">
+					<div class="womo-widget-container" data-provider-id="1147237" data-type="rating-box-horizontal" data-badge-color="colour" data-background-color="#5BB7D9" data-text-color="#000000" data-width="250px" data-height="232px">Pulse Laser Relief Reviews
+					</div>
+				</a>
+			[%if [@config:show_home_ads@]%]
+				[%advert type:'text' template:'thumb' limit:'8' ad_group:'testi'%]
+					[%param *header%]
+					
+					<section id="testipageCarousel" class="carousel slide" data-ride="carousel" aria-label="Customer Reviews" data-interval="10000">
+					<div class="carousel-inner">
+					[%/param%]
+					[%param *body%]
+						<div id="[@count@]" class="carousel-item [%if [@count@] eq '0'%]active[%/if%]">
+							[%if [@headline@] or [@description@] or [@linktext@]%]
+							<div class="testi the_banner">
+								[%if [@description@]%]<div class="the_info mb-4">"[@description@]"</div>[%/if%]
+								[%if [@headline@]%][@headline@][%/if%]
+							</div>
+							[%/if%]
+						</div>
+						[%SITE_VALUE id:'counter'%]
+							<li data-target="#testipageCarousel" data-slide-to="[@count@]" [%if [@count@] eq '0'%]class="active"[%/if%]></li>
+						[%/SITE_VALUE%]
+					[%/param%]
+					[%param *footer%]
+					</div>
+					[%if [@total_showing@] > 1%]
+							<a class="carousel-control-prev d-none d-sm-block" href="#testipageCarousel" role="button" data-slide="prev">
+								<span class="fas fa-angle-left fa-2x text-blue"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next d-none d-sm-block" href="#testipageCarousel" role="button" data-slide="next">
+								<i class="fas fa-angle-right fa-2x text-blue"></i>
+								<span class="sr-only">Next</span>
+							</a>
+						[%/if%]
+				</section>
+					[%/param%]
+				[%/advert%]
+			[%/if%]
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-white">
+	<div class="container">
+		<div class="row">

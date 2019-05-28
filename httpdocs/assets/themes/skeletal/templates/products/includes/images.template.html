@@ -1,0 +1,30 @@
+<meta property="og:image" content="[@full_image@]"/>
+
+<div class="main-image text-center thumbMainmage">
+	<div class="zoom">
+		<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%END asset_url%]" class="hidden">
+		<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'thumbL' check_parent:'y'%][%END asset_url%]" rel="itmimg[@SKU@]" alt="[@name@]" border="0" id="main-image" itemprop="image">
+	</div>
+</div>
+<div class="clear"></div><br />
+
+<div class="clear"></div>
+<div class="row mb-5">
+<!--##[%THUMBNAILS id:'[@SKU@]' check_parent:'y'%]##-->
+	[%param *header%]
+		<div class="col-12 productsImages">
+	[%/param%]
+	<!--##[%PARAM *body%]##-->
+		<div class="col-3 col-md-4">
+			<a href="[@full_image@]" class="js-imageswap" rel="product_images" title="Large View">
+				<img src="[@thumb_image@]" data-largeimg="[@full_image@]" border="0" class="img-fluid product-image-small" title="Large View">
+			</a>
+		</div>
+	<!--##[%END PARAM%]##-->
+	[%param *footer%]
+	    </div>
+	[%/param%]
+
+	<!--##[%PARAM *brochure%]##--><div class="col-4 col-md-3"><a href="[@file@]" target="_blank"><img src="[@config:imageurl@]/pdf_brochure.gif" alt="View PDF brochure for [%NOHTML%][@name@][%END NOHTML%]" width="45" height="45"></a></div><!--##[%END PARAM%]##-->
+<!--##[%END THUMBNAILS%]##-->
+</div>

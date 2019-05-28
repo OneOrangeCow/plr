@@ -1,0 +1,315 @@
+[%site_value id:'footer_javascript'%]
+	[%cdn_asset html:'1' type:'css' library:'fancybox' version:'2.1.5'%]jquery.fancybox.css[%/cdn_asset%]
+	[%cdn_asset html:'1' type:'js' library:'jcountdown' version:'1.4'%]jquery.jcountdown.min.js[%/cdn_asset%]
+	[%cdn_asset html:'1' type:'js' library:'fancybox' version:'2.1.5'%]jquery.fancybox.pack.js[%/cdn_asset%]
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// Fancybox
+			$(".fancybox").fancybox();
+		});
+	</script>
+[%/site_value%]
+<div class="col-12">
+	<h1 class="display-4 my-4">
+		[%url_info name:'page_heading' default:'[@content_name@]'/%]
+	</h1>
+	<p class="text-muted">
+		[%if [@content_author@]%]Author: [@content_author@] &nbsp;[%/if%]
+		[%if [@date_posted@] != 0000-00-00 00:00:00%]Date Posted:[%FORMAT type:'date'%][@date_posted@][%/FORMAT%]&nbsp;[%/if%]
+	</p>
+	[%advert type:'text' template:'carousel' limit:'10' ad_group:''%]
+		[%param *header%]
+			<section id="homepageCarousel" class="carousel slide" data-ride="carousel" aria-label="Banner images">
+				[%if [@total_showing@] > 1%]
+					<ol class="carousel-indicators">
+						[%site_value id:'counter' type:'load'/%]
+					</ol>
+				[%/if%]
+				<div class="carousel-inner">
+		[%/param%]
+		[%param *footer%]
+				</div>
+				[%if [@total_showing@] > 1%]
+					<a class="carousel-control-prev" href="#homepageCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#homepageCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				[%/if%]
+			</section>
+			<hr aria-hidden="true" />
+		[%/param%]
+	[%/advert%]
+	[%advert type:'product' limit:'8' template:'' ad_group:''%]
+		[%param *header%]
+			<section class="row products-row" aria-label="Featured products">
+		[%/param%]
+		[%param footer%]
+			</section>
+			<hr aria-hidden="true"/>
+		[%/param%]
+	[%/advert%]
+	[%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
+		<div class="n-responsive-content" aria-label="Short description">
+			[@content_short_description1@]
+			[@content_short_description2@]
+			[@content_short_description3@]
+		</div>
+		<div class="n-responsive-content col-12" aria-label="Description">
+         [%parse%]
+			[@content_description1@]
+			[@content_description2@]
+			[@content_description3@]
+         [%/parse%]
+		</div>
+	[%/if%]
+	
+	
+	[%show_content id:'247' %]
+		[%param *body%]
+		<h2>[@content_name@]</h2>
+		<hr>
+		[%/param%]
+	[%/show_content%]
+	<div class="row">
+         <div aria-multiselectable="true" class="panel-group faqs col-12" id="accordion" role="tablist">
+             <div class="panel panel-default">
+                 [%thumb_list type:'content' content_type:'faq' filter_content:'' filter_category:'247' limit:'999' %]
+                     [%param *header%]
+                     [%/param%]
+                     [%param *body%]
+                         <div class="panel-heading" id="headingOne" role="tab">
+                             <h2 class="panel-title">
+                                 <a aria-controls="collapseOne" aria-expanded="false" data-toggle="collapse" href="#[@content_id@]" role="button">[@content_name@]</a>
+                             </h2>
+                         </div>
+                         <div aria-labelledby="headingOne" class="panel-collapse collapse" id='[@content_id@]' role="tabpanel" data-parent="#accordion">
+                             <div class="list-group">
+                             [@content_description1@]
+                             </div>
+                         </div>
+                     [%/param%]
+                     [%param *footer%]
+                     [%/param%]
+                 [%/thumb_list%]
+             </div>
+         </div>
+      </div>
+	
+	[%show_content id:'248' %]
+		[%param *body%]
+		<h2 class="mt-5">[@content_name@]</h2>
+		<hr>
+		[%/param%]
+	[%/show_content%]
+	<div class="row">
+         <div aria-multiselectable="true" class="panel-group faqs col-12" id="accordion2" role="tablist">
+             <div class="panel panel-default">
+                 [%thumb_list type:'content' content_type:'faq' filter_content:'' filter_category:'248' limit:'999' %]
+                     [%param *header%]
+                     [%/param%]
+                     [%param *body%]
+                         <div class="panel-heading" id="headingOne2" role="tab">
+                             <h2 class="panel-title">
+                                 <a aria-controls="collapseOne2" aria-expanded="false" data-toggle="collapse" href="#[@content_id@]-2" role="button">[@content_name@]</a>
+                             </h2>
+                         </div>
+                         <div aria-labelledby="headingOne2" class="panel-collapse collapse" id='[@content_id@]-2' role="tabpanel" data-parent="#accordion2" >
+                             <div class="list-group">
+                             [@content_description1@]
+                             </div>
+                         </div>
+                     [%/param%]
+                     [%param *footer%]
+                     [%/param%]
+                 [%/thumb_list%]
+             </div>
+         </div>
+      </div>
+	
+	[%thumb_list type:'content' content_type:'' template:'' show_next_level:'[@content_level@]' limit:'20'%]
+		[%param *footer%]
+			<nav aria-label="Page navigation">
+				<ul class="pagination">
+					[%paging limit:'3'%]
+						[%param *previous_page%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go back one page"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>[%/param%]
+						[%param *goback_pages%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
+						[%param *current_page%]<li class="page-item active"><a class="page-link" href="[@url@]" aria-label="Current page">[@page@]</a></li>[%/param%]
+						[%param *gonext_pages%]<li><a href="[@url@]" class="page-link" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
+						[%param *next_page%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go forward one page"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>[%/param%]
+					[%/paging%]
+				</ul>
+			</nav>
+		[%/param%]
+	[%/thumb_list%]
+	[%thumb_list type:'products' template:'' limit:'[@config:related_limit@]'%]
+		[%param header%]
+			<hr aria-hidden="true"/>
+			<section class="row" aria-label="Products">
+		[%/param%]
+		[%param footer%]
+			</section>
+		[%/param%]
+	[%/thumb_list%]
+	[%if [@content_allow_reviews@]%]
+		<div class="dropdown">
+			<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu[@content_id@]" data-toggle="dropdown" aria-controls="dropdownMenu[@content_id@]" aria-label="Share page">
+				Share: <i class="fab fa-facebook text-facebook" aria-hidden="true"></i>
+				<i class="fab fa-twitter text-twitter" aria-hidden="true"></i>
+				<i class="fab fa-pinterest text-pinterest" aria-hidden="true"></i>
+				<i class="fab fa-google-plus-g text-google-plus" aria-hidden="true"></i>
+				<span class="caret"></span>
+			</button>
+			<ul id="dropdownMenu[@content_id@]" class="dropdown-menu" aria-labelledby="dropdownMenu[@content_id@]">
+				<li><a class="dropdown-item js-social-share dropdown-item" href="//www.facebook.com/sharer/sharer.php?u=[%url_encode%][@url@][%/url_encode%]"><i class="fab fa-facebook text-facebook" aria-hidden="true"></i> Facebook</a></li>
+				<li><a class="dropdown-item js-social-share dropdown-item" href="//twitter.com/intent/tweet/?text=[%url_encode%][@content_name@][%/url_encode%]&amp;url=[%url_encode%][@url@][%/url_encode%]"><i class="fab fa-twitter text-twitter" aria-hidden="true"></i> Twitter</a></li>
+				<li><a class="dropdown-item js-social-share dropdown-item" href="//www.pinterest.com/pin/create/button/?url=[%url_encode%][@url@][%/url_encode%]&amp;description=[%url_encode%][@content_name@][%/url_encode%]"><i class="fab fa-pinterest text-pinterest" aria-hidden="true"></i> Pinterest</a></li>
+				<li><a class="dropdown-item js-social-share dropdown-item" href="//plus.google.com/share?url=[%url_encode%][@url@][%/url_encode%]"><i class="fab fa-google-plus-g text-google-plus" aria-hidden="true"></i> Google+</a></li>
+			</ul>
+		</div>
+		<a id="comments"></a><hr />
+		[%thumb_list type:'content_reviews' limit:'5'%]
+			[%param filter_1%][@CONTENT_ID@][%/param%]
+			[%param *header%]
+				<h3>Comments ([@reviews@])</h3>
+			[%/param%]
+			[%param *body%]
+				<div itemprop="review" itemscope itemtype="http://schema.org/Review">
+					<blockquote>
+						<h4 itemprop="name"><i>[%format type:'text' rmhtml:'1'%][@title@][%/format%]</i></h4>
+						<div>
+							<strong>[%if [@reviewname@]%]By: <span itemprop="author">[@reviewname@]</span> on [%/ if%]<meta itemprop="datePublished" content="[%FORMAT type:'date'%][@insert_date@][%/FORMAT%]">[%FORMAT type:'date'%][@insert_date@][%/FORMAT%]</strong>
+						</div>
+						<span itemprop="description">[%format type:'text' rmhtml:'1'%][@review@][%/format%]</span>
+						[%if [@review_response@]%]
+							<br /><br />
+							<blockquote>
+								<span class="review_response text-muted"><strong><i>[@config:website_name@] Response</i></strong><br /> [%format type:'text' rmhtml:'1'%][@review_response@][%/format%]</span>
+							</blockquote>
+						[%/if%]
+					</blockquote> <hr />
+				</div>
+			[%/param%]
+		[%/thumb_list%]
+		<h3>Leave a comment</h3>
+		<form name="edit_review" method="post" role="form" action="[%URL page:'account' type:'write_contentreview'%][%/URL%]">
+			<fieldset>
+				<input type="hidden" name="fn" value="confirm">
+				<input type="hidden" name="item" value="[@content_id@]">
+				<input type="hidden" name="checked_terms_and_conditions" value="1">
+				<input type="hidden" name="rating_value" id="rating_value" value="5"/>
+				<div class="form-group">
+					<label for="review_title">Title For Comment</label>
+					<input class="form-control" type="text" name="review_title" id="review_title" value="[%nohtml%][@form:review_title@][%/nohtml%]" required/>
+				</div>
+				<div class="form-group">
+					<label for="review_text">Your Comment</label>
+					<textarea name="review_text" id="review_text" rows="10" class="form-control" required>[%nohtml%][@form:review_text@][%/nohtml%]</textarea>
+				</div>
+				[%ajax_loader%]
+					[%if ![@user:username@] or [@user:username@] eq 'noreg'%]
+						<div class="form-group">
+							<label for="customername">Your Name</label>
+							<input class="form-control" type="text" name="customername" id="customername" value="[%nohtml%][@form:customername@][%/nohtml%]" required/>
+						</div>
+						<div class="form-group">
+							<label for="emailaddress">Your Email Address</label>
+							<input class="form-control" size="70" type="email" name="emailaddress" id="emailaddress" value="[%nohtml%][@form:emailaddress@][%/nohtml%]" required/>
+						</div>
+					[%/if%]
+				[%/ajax_loader%]
+				<p><button type="submit" class="btn btn-success" />Post Comment</button></p>
+				<p class="text-muted">Comments have to be approved before showing up</p>
+			</fieldset>
+		</form>
+	[%/if%]
+</div>
+</div>
+</div>
+<div class="bg-lightgray">
+	<div class="container py-5">
+		<div class="row">
+			[%set [@relatedcontent@]%][%list type:'content' filter:'related_content=[@content_id@]' limit:'99'%][%param *body%][@content_name@][%/param%][%/list%][%/set%]
+			[%if [@relatedcontent@]%]
+				<div class="col-12 col-md-6">
+					[%list type:'content' filter:'related_content=[@content_id@]' limit:'99'%]
+					    [%param *header%]
+					    	<h3 class="h2 the_title font-weight-bold pb-4">Related Articles</h3>
+					    [%/param%]
+					    [%param *body%]
+					        <div class="row mx-3">
+					            <div class="col-12">
+					                <h4 class="mb-0"><span class="far fa-check-circle"></span> [@content_name@]</h4>
+					                <p><a class="small" href="[@url@]">Read more</a></p>
+					            </div>
+					        </div>
+					    [%/param%]
+					[%/list%]
+				</div>
+			[%/if%]
+			<div class="col-12 col-md-6">
+				[%advert type:'product' limit'1' template:'list' sortby:'' ad_group:'featured_products'%]
+					[%param *header%]
+						<h3 class="h2 the_title font-weight-bold pb-4">We Recommend</h3>
+						<div class="row mx-3">
+					[%/param%]
+					[%param footer%]	
+						</div>
+					[%/param%]
+				[%/advert%]
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-white">
+	<div class="container py-5">
+		<div class="row justify-content-center wordofmouth">
+			<div class="col-12 col-md-7 text-center my-auto">
+				<a href="https://www.wordofmouth.com.au/certificate/1147237-pulse-laser-relief-sydney" rel="nofollow" class="womo-widget-anchor">
+					<div class="womo-widget-container" data-provider-id="1147237" data-type="rating-box-horizontal" data-badge-color="colour" data-background-color="#5BB7D9" data-text-color="#000000" data-width="250px" data-height="232px">Pulse Laser Relief Reviews
+					</div>
+				</a>
+				[%advert type:'text' template:'thumb' limit:'8' ad_group:'testi' category:'0'%]
+					[%param *header%]
+					
+					<section id="testipageCarousel" class="carousel slide" data-ride="carousel" aria-label="Customer Reviews" data-interval="10000">
+					<div class="carousel-inner">
+					[%/param%]
+					[%param *body%]
+						<div id="[@count@]" class="carousel-item [%if [@count@] eq '0'%]active[%/if%]">
+							[%if [@headline@] or [@description@] or [@linktext@]%]
+							<div class="testi the_banner">
+								[%if [@description@]%]<div class="the_info mb-4">"[@description@]"</div>[%/if%]
+								[%if [@headline@]%][@headline@][%/if%]
+							</div>
+							[%/if%]
+						</div>
+						[%SITE_VALUE id:'counter'%]
+							<li data-target="#testipageCarousel" data-slide-to="[@count@]" [%if [@count@] eq '0'%]class="active"[%/if%]></li>
+						[%/SITE_VALUE%]
+					[%/param%]
+					[%param *footer%]
+					</div>
+					[%if [@total_showing@] > 1%]
+							<a class="carousel-control-prev d-none d-sm-block" href="#testipageCarousel" role="button" data-slide="prev">
+								<span class="fas fa-angle-left fa-2x text-blue"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next d-none d-sm-block" href="#testipageCarousel" role="button" data-slide="next">
+								<i class="fas fa-angle-right fa-2x text-blue"></i>
+								<span class="sr-only">Next</span>
+							</a>
+						[%/if%]
+				</section>
+					[%/param%]
+				[%/advert%]
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-white">
+	<div class="container">
+		<div class="row">

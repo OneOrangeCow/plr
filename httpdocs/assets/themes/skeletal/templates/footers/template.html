@@ -1,0 +1,213 @@
+		</div>
+	</div>
+</div>
+<div class="the_newsletter_subscribe">
+	<div class="container py-5">
+		<div class="row">
+			[%if [@config:show_newsletter_subscribe@]%]
+			<div class="col-12 col-lg-4 text-center text-lg-left">
+				<p class="the-signup">Sign up for the latest news, offers and e-alerts</p>
+			</div>
+			<div class="col-12 col-lg-8">
+				<form method="post" action="https://pulselaserrelief.us19.list-manage.com/subscribe/post?u=6e54b1a06bd3341e85501b2be&amp;id=2aa408486c" aria-label="Newsletter subscribe form">
+				<div class="row">
+					<div class="col-12 col-md-6 col-lg-3 pb-3 pb-lg-0">
+						<input id="mce-FNAME" name="FNAME" class="form-control rounded-field" type="text" value="[%nohtml%][@inp-first_name@][%/nohtml%]" placeholder="First Name" required aria-label="First Name"/>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3 pb-3 pb-lg-0">
+						<input id="mce-LNAME" name="LNAME" class="form-control rounded-field" type="text" value="[%nohtml%][@inp-last_name@][%/nohtml%]" placeholder="Last Name" required aria-label="Last Name"/>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3  pb-3 pb-lg-0">
+						<input name="EMAIL" id="mce-EMAIL" class="form-control rounded-field" type="email" value="[%nohtml%][@inp-email@][%/nohtml%]" placeholder="Email Address" required aria-label="Email Address"/>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3 pb-3 pb-lg-0">
+						<div id="mce-responses" class="clear">
+							<div class="response" id="mce-error-response" style="display:none"></div>
+							<div class="response" id="mce-success-response" style="display:none"></div>
+						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6e54b1a06bd3341e85501b2be_2aa408486c" tabindex="-1" value="" /></div>
+						<div class="input-group-append"><input class="btn btn-light rounded-btn-light rounded-btn btn-block" type="submit" name="subscribe" id="subscribe" value="Subscribe" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"/></div>
+					</div>
+				</div>
+				</form>
+			</div>
+			[%/if%]
+		</div>
+	</div>
+</div>
+<footer class="wrapper-footer mb-md-4">
+	<div class="container py-5">
+		<div class="row d-block d-lg-none">
+			<div class="col-12 col-sm-6 mx-auto pb-3">
+				<a href="[@config:home_url@]" title="[@config:company_name@]">
+					<img class="logo mb-4" src="[@config:imageurl@]/website_logo.png?[@config:neto_css_version@]" alt="[@config:company_name@] logo"/>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="d-none d-lg-block col-12 col-lg-3 text-lg-left">
+				<a href="[@config:home_url@]" title="[@config:company_name@]">
+					<img class="logo mb-4" src="[@config:imageurl@]/website_logo.png?[@config:neto_css_version@]" alt="[@config:company_name@] logo"/>
+				</a>
+				<!-- 
+				<a href="https://www.wordofmouth.com.au/certificate/1147237-Pulse-Laser-Relief-Sydney" target="_blank">
+					<img class="img-fluid mb-4" src="/assets/images/icons-footer.png" alt="Customer Approved"/>
+				</a>
+					-->
+				<!-- Begin eWAY Linking Code -->
+				<div id="eWAYBlock" class="mt-lg-4">
+				<div style="text-align:center;">
+				<a href="http://www.eway.com.au/secure-site-seal?i=12&s=7&pid=481a5164-deff-4cf8-add4-cb75ba7700cc&theme=1" title="eWAY Payment Gateway" target="_blank" rel="nofollow">
+				<img alt="eWAY Payment Gateway" src="https://www.eway.com.au/developer/payment-code/verified-seal.ashx?img=12&size=7&pid=481a5164-deff-4cf8-add4-cb75ba7700cc&theme=1" class="img-fluid" />
+				</a>
+				</div>
+				</div>
+				<!-- End eWAY Linking Code -->
+			</div>
+			<div class="col-12 col-lg-9 mt-4 mt-sm-0">
+				<nav class="row" aria-label="Footer menu">
+					[%cache type:'menu' id:'footer-content-menu' ttl:'86400'%]
+						[%menu id:'web_footer'%]
+							[%param *level_1%]
+								<div class="col-12 col-sm-4 col-lg-3 text-md-left mt-4 mt-sm-0 pb-3 pb-lg-0">
+									<ul class="nav flex-column">
+										<li class="nav-item"><h4 class="nav-link py-0">[@name@]</h4></li>
+										[@next_level@]
+									</ul>
+								</div>
+							[%/param%]
+							[%param *level_2%]
+								<li class="nav-item"><a href="[@url@]" class="nav-link">[@name@]</a></li>
+							[%/param%]
+						[%/menu%]
+					[%/cache%]
+					<div class="col-12 col-sm-4 col-lg-6 text-md-left mt-4 mt-sm-0 pb-3 pb-lg-0">
+						<ul class="nav flex-column nav-social">
+							<li class="nav-item"><h4 class="nav-link py-0">Get in Touch</h4></li>
+							<li class="nav-item"><a href="tel:[@CONFIG:COMPANY_PHONE@]" class="nav-link"><i class="fas fa-phone"></i> <span>[@CONFIG:COMPANY_PHONE@]</a></span></li>
+							[%if [@config:facebook_account_id@]%]
+							<li class="nav-item"><a class="nav-link" itemprop="sameAs" href="[@config:facebook_account_id@]" target="_blank" title="[@config:company_name@] on Facebook" rel="noopener"><i class="fab fa-facebook-f" aria-hidden="true"></i> <span>Facebook</span></a></li>
+							[%/if%]
+							[%if [@config:twitter_account_id@]%]
+							<li class="nav-item"><a class="nav-link" itemprop="sameAs" href="[@config:twitter_account_id@]" target="_blank" title="[@config:company_name@] on Twitter" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i> <span>Twitter</span></a></li>
+							[%/if%]
+							[%if [@config:googleplus_account_id@]%]
+							<li class="nav-item"><a class="nav-link" itemprop="sameAs" href="[@config:googleplus_account_id@]" target="_blank" title="[@config:company_name@] on Google Plus" rel="noopener"><i class="fab fa-google-plus text-dark" aria-hidden="true"></i><span> Google Plus</span></a></li>
+							[%/if%]
+							[%if [@config:youtube_account_id@]%]
+							<li class="nav-item"><a class="nav-link" itemprop="sameAs" href="[@config:youtube_account_id@]" target="_blank" title="[@config:company_name@] on Youtube" rel="noopener"><i class="fab fa-youtube" aria-hidden="true"></i><span> Youtube</span></a></li>
+							[%/if%]
+							[%if [@config:instagram_account_id@]%]
+							<li class="nav-item"><a class="nav-link" itemprop="sameAs" href="[@config:instagram_account_id@]" target="_blank" title="[@config:company_name@] on Instagram" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i><span> Instagram</span></a></li>
+							[%/if%]
+							[%if [@config:pinterest_account_id@]%]
+							<li class="nav-item"><a class="nav-link" itemprop="sameAs" href="[@config:pinterest_account_id@]" target="_blank" title="[@config:company_name@] on Pinterest" rel="noopener"><i class="fab fa-pinterest" aria-hidden="true"></i><span> Pinterest</span></a></li>
+							[%/if%]
+							[%if [@config:tumblr_account_id@]%]
+							<li class="nav-item"><a class="nav-link" itemprop="sameAs" href="[@config:tumblr_account_id@]" target="_blank" title="[@config:company_name@] on Tumblr" rel="noopener"><i class="fab fa-tumblr" aria-hidden="true"></i><span> Tumblr</span></a></li>
+							[%/if%]
+							[%if [@config:linkedin_account_id@]%]
+							<li class="nav-item"><a class="nav-link" itemprop="sameAs" href="[@config:linkedin_account_id@]" target="_blank" title="[@config:company_name@] on Linkedin" rel="noopener"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span> Linkedin</span></a></li>
+							[%/if%]
+						</ul>
+						<div class="col-12 mt-2 d-none d-lg-block">
+							<!--<h3 class="mt-2">Word Of Mouth</h3>-->
+							<a href="https://www.wordofmouth.com.au/certificate/1147237-pulse-laser-relief-sydney" rel="nofollow" class="womo-widget-anchor">
+								<div class="womo-widget-container" data-provider-id="1147237" data-type="rating-box-horizontal" data-badge-color="colour" data-background-color="#5BB7D9" data-text-color="#000000" data-width="250px" data-height="232px">Pulse Laser Relief Reviews
+								</div>
+							</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="col-12 d-block d-lg-none">
+				<div class="row">
+					<div class="col-12 col-sm-6">
+						<!-- Begin eWAY Linking Code -->
+						<div id="eWAYBlock">
+							<div style="text-align:center;">
+							<a href="http://www.eway.com.au/secure-site-seal?i=12&s=7&pid=481a5164-deff-4cf8-add4-cb75ba7700cc&theme=1" title="eWAY Payment Gateway" target="_blank" rel="nofollow">
+							<img alt="eWAY Payment Gateway" src="https://www.eway.com.au/developer/payment-code/verified-seal.ashx?img=12&size=7&pid=481a5164-deff-4cf8-add4-cb75ba7700cc&theme=1" class="img-fluid" />
+							</a>
+							</div>
+						</div>
+						<!-- End eWAY Linking Code -->
+					</div>
+					<div class="col-12 col-sm-6 mt-3 mt-sm-0">
+						<a href="https://www.wordofmouth.com.au/certificate/1147237-pulse-laser-relief-sydney" rel="nofollow" class="womo-widget-anchor">
+							<div class="womo-widget-container pl-5" data-provider-id="1147237" data-type="rating-box-horizontal" data-badge-color="colour" data-background-color="#5BB7D9" data-text-color="#000000" data-width="250px" data-height="232px">Pulse Laser Relief Reviews
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="copy">
+	<div class="container py-3">
+		<div class="row">
+			<div class="col-12 col-lg-5 d-none d-sm-block">
+				[%checkout_pay_icons show_icon:'1' ignore_balance:'1'%]
+					[%param header%]
+						<ul class="list-inline d-flex flex-wrap justify-content-center" role="contentinfo" aria-label="Accepted payment methods">
+					[%/param%]
+					[%param *body%]
+							<li class="mr-1">
+								<div class="payment-icon-container">
+									<div class="payment-icon" style="background-image: url([@processor_icon_url@]); height: 30px;"><span class="sr-only">[@name@]</span></div>
+								</div>
+							</li>
+					[%/param%]
+					[%param *footer%]
+						</ul>
+					[%/param%]
+				[%/checkout_pay_icons%]
+			</div>
+			<div class="col-12 col-lg-7 text-center text-lg-right">
+				<p class="small" data-test-id="address">
+					<strong>Copyright &copy; [%format type:'date' format:'#Y'%]today[%/format%] [@config:company_name@].</strong>
+					[%if [@config:company_abn@]%]<strong>[%if [@config:PRIMARY_ABN_LABEL@]%][@config:PRIMARY_ABN_LABEL@][%else%]ABN[%/if%]:</strong> [@config:company_abn@]<br>[%/ if%]
+					[%if [@config:company_poaddr@]%]<strong>Address:</strong> [@config:company_poaddr@][%/ if%]
+				</p>
+				[%cache type:'menu' id:'footer-content-menu-bottom' ttl:'86400'%]
+						<ul class="nav justify-content-md-end">
+					[%menu id:'web_f-bottom'%]
+						[%param *level_1%]
+							<li class="nav-item"><a href="[@url@]" class="nav-link text-light">[@name@]</a></li>
+						[%/param%]
+					[%/menu%]
+						</ul>
+				[%/cache%]
+			</div>
+		</div>
+	</div>
+</div>
+</footer>
+<div class="modal fade" id="termsModal">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Terms &amp; Conditions</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body">[%content_zone id:'terms'/%]</div>
+			<div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="privacyModal">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Privacy Policy</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body">[%show_content id:'2'%][%param *body%][@content_description1@][%/param%][%/show_content%]</div>
+			<div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div>
+		</div>
+	</div>
+</div>
+<!-- Required Neto Scripts - DO NOT REMOVE -->
+[%load_template file:'footers/includes/scripts.template.html'/%]
+</body>
+</html>

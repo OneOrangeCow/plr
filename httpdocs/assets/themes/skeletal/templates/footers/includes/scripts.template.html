@@ -1,0 +1,102 @@
+[%cdn_asset html:'1' type:'js' library:'skeletal' version:'4.0.0'%]vendor.js[%/cdn_asset%]
+[%cdn_asset html:'1' type:'js' library:'jquery_ui' version:'1.11.1'%]js/jquery-ui-1.8.18.custom.min.js[%/cdn_asset%]
+[%NETO_JS html:'1' id:'main' /%]
+<script type="text/javascript" src="[%ntheme_asset%]js/custom.js[%/ntheme_asset%]"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script>
+//Slick carousel
+$(document).ready(function(){
+$('.slickCarousel').slick({
+  dots: true,
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 6,
+  slidesToScroll: 6,
+  arrows : false,
+  dots: false,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 5,
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+$('.productsImages').slick({
+  dots: false,
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows : true,
+  dots: false,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+
+});//close document
+</script>
+[%SITE_VALUE id:'footer_javascript' type:'load'/%]
+[%if [@form:disable_scripts@] ne 'true'%][%tracking_code type:'Visitor' /%][%/if%]
+<div class="npopup" style="" role="alertdialog" aria-atomic="true" aria-label="Popup" aria-describedby="npopupDesc" tabindex="-1">
+	<a href="javascript:void(0);" class="npopup-btn-close" role="button" aria-label="Close popup"></a>
+	<div class="npopup-body" id="npopupDesc"></div>
+</div>
+<div class="nactivity"><i class="fa fa-spinner fa-spin fa-inverse fa-3x fa-fw"></i></div>
